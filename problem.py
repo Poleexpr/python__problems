@@ -1,25 +1,15 @@
-def f(x, y, z):
-  
-  list1 = []
-  if x %2 == 0:
-    list1.append(x)
-  if y %2 == 0:
-    list1.append(y)
-  if z %2 == 0:
-    list1.append(z)
 
-  if len(list1) > 0: 
-    list1.sort(reverse = True)
-    return list1[0]
-  else:
-    return 'no'
+arr = input('input 10 integers pls ')
+l = list(map(int, arr.split(' ')))
+filtred_l = filter(lambda x: x % 2 != 0, l)
+filtred_list = list(filtred_l)
 
- 
+if len(filtred_list) == 0:
+  print('no')
+else:
+  filtred_list.sort(reverse=True)
+  print(filtred_list[0])
   
-  
-
-    
-print(f(1, 1, 1))
 
 
 
