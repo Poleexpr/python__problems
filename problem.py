@@ -1,14 +1,21 @@
+def findSmallest (arr):
+    smallest = arr[0]
+    smallest_index = 0  
+    for i in range(1, len(arr)):
+        if arr[i] < smallest:
+            smallest = arr[i]
+            smallest_index = i
+    return smallest_index
 
-arr = input('input 10 integers pls ')
-l = list(map(int, arr.split(' ')))
-filtred_l = filter(lambda x: x % 2 != 0, l)
-filtred_list = list(filtred_l)
+# функция сортировки выбором 
+def selectionSort (arr):
+    newArr = []  
+    for i in range(len(arr)):
+        smallest = findSmallest(arr)
+        newArr.append(arr.pop(smallest))
+    return newArr
 
-if len(filtred_list) == 0:
-  print('no')
-else:
-  filtred_list.sort(reverse=True)
-  print(filtred_list[0])
+print(selectionSort([5, 3, 6, 2, 10]))
   
 
 
